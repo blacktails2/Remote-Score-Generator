@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Remote Score Generator</title>
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tabcooker.svg" color="#1B676B">
+  <meta name="msapplication-TileColor" content="#1B676B">
+  <meta name="theme-color" content="#1B676B">
+  <link rel="stylesheet" href="css/style.css?090513" />
+  <script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?qdfWifIcjAc%3D&box=SI-e1RSEBHo%3D&aa=1&ab=1&chws=1"></script>
+  <script src="/js/smooth-scroll.min.js"></script>
+  <script src="/js/lozad.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJKMNXG0QG"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-RJKMNXG0QG');
+  </script>
+  <link href="https://api.fontshare.com/css?f[]=clash-grotesk@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <img class="logo" src="image/logo.png" alt="">
+  <div class="namebar"></div>
+  <div class="scoreleft"></div>
+  <div class="scoreright"></div>
+  <div class="progressleft"></div>
+  <div class="progressright"></div>
+  <p id="numberleft"></p>
+  <p id="numberright"></p>
+  <p id="nameleft"><span id="teamleft" class="team"></span></p>
+  <p id="nameright"><span id="teamright" class="team"></span></p>
+  <p id="prtextleft"></p>
+  <p id="prtextright"></p>
+</body>
+<script>
+//GASのAPIのURL（各自変更してください。）
+const endpoint =
+  "https://script.google.com/macros/s/AKfycbzACuMbhyNzb59r0nmagNCsNjFRLLN5Qmm1Gzx7tvmgY9TXxw4ombX_Bma7ticCulHOJw/exec";
+
+//APIを使って非同期データを取得する
+function remoteScore() {
+  fetch(endpoint)
+    .then(response => response.json())
+    /*成功した処理*/
+    .then(data => {
+      //JSONから配列に変換
+      const object = data;
+      console.log(data);
+      document.getElementById("numberleft").innerHTML = data[0]['score'];
+      document.getElementById("nameleft").innerHTML = '<span id="teamleft" class="team"></span>' + data[0]['name'];
+      document.getElementById("teamleft").innerHTML = data[0]['team'];
+      document.getElementById("prtextleft").innerHTML = data[0]['status'];
+      document.getElementById("numberright").innerHTML = data[1]['score'];
+      document.getElementById("nameright").innerHTML = '<span id="teamright" class="team"></span>' + data[1]['name'];
+      document.getElementById("teamright").innerHTML = data[1]['team'];
+      document.getElementById("prtextright").innerHTML = data[1]['status'];
+      //inputタグそれぞれに取得したデータを設定
+    });
+}
+remoteScore();
+window.setInterval(remoteScore, 3000);
+</script>
+
+</html>

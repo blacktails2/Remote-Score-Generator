@@ -1,0 +1,171 @@
+// 1. Import the initial variables
+@import "../../node_modules/bulma/sass/utilities/_all";
+@import "../../node_modules/bulma/sass/grid/columns";
+@import "../../node_modules/bulma/sass/base/_all";
+@import "fontface";
+
+$book: "Clash Grotesk",
+"TazuganeGothicStdN-Book",
+sans-serif;
+$bold: "Clash Grotesk",
+"TazuganeGothicStdN-Bold",
+sans-serif;
+
+// $gray: #888;
+// $lightgray: #ccc;
+// $white: #ffffff;
+// $WCGR: #202025;
+// $WCBG: #CCB280;
+// $WCBGD: #BC9E65;
+html {
+  background-color: #00ff00;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 99;
+  height: 180px;
+  margin-top: -7px;
+}
+
+.namebar {
+  background-color: #030D4F;
+  opacity: 0.9;
+  width: 990px;
+  height: 50px;
+  position: fixed;
+  top: 50px;
+  left: 465px;
+  z-index: -1;
+}
+
+.scoreleft {
+  background-color: #FFC52C;
+  opacity: 0.9;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 50px;
+  left: 395px;
+  z-index: -1;
+  border-radius: 15px 0 0 15px;
+}
+
+.scoreright {
+  background-color: #FFC52C;
+  opacity: 0.9;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 50px;
+  left: 1455px;
+  z-index: -1;
+  border-radius: 0 15px 15px 0;
+}
+
+.progressleft {
+  background-color: #FB0C06;
+  opacity: 0.9;
+  width: 410px;
+  height: 20px;
+  position: fixed;
+  top: 100px;
+  left: 465px;
+  z-index: -1;
+  border-radius: 0 0 5px 0;
+}
+
+.progressright {
+  background-color: #FB0C06;
+  opacity: 0.9;
+  width: 410px;
+  height: 20px;
+  position: fixed;
+  top: 100px;
+  left: 1045px;
+  z-index: -1;
+  border-radius: 0 0 0 5px;
+}
+
+#numberleft {
+  width: 100px;
+  color: #030D4F;
+  text-align: center;
+  font-size: 54px;
+  position: fixed;
+  left: 382px;
+  top: 45px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+}
+
+#numberright {
+  width: 100px;
+  color: #030D4F;
+  text-align: center;
+  font-size: 54px;
+  position: fixed;
+  right: 382px;
+  top: 45px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+}
+
+#nameleft {
+  width: 410px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  position: fixed;
+  left: 465px;
+  top: 53px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+  letter-spacing: 1px;
+}
+
+#nameright {
+  width: 410px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  position: fixed;
+  right: 465px;
+  top: 53px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+  letter-spacing: 1px;
+}
+
+.team {
+  font-variation-settings: 'wght'400;
+  margin-right: 10px;
+}
+
+#prtextleft {
+  width: 410px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  left: 465px;
+  top: 97px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+  letter-spacing: 2px;
+}
+
+#prtextright {
+  width: 410px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  right: 465px;
+  top: 97px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-variation-settings: 'wght'600;
+  letter-spacing: 2px;
+}
